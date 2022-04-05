@@ -1,19 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
-    <ScrollView style = {styles.container}>
+    <View style = {styles.container}>
       <StatusBar style="auto" />
-      <View>
+      <View style = {{alignItems: "center",
+          flex: 2,
+        }}>
         <Text style = {{
           color: 'black'
           }}>footyFinder</Text>
       </View>
 
       <View style = {{
-          flex: 1,
+          flex: 5,
           alignItems: "center",
           
         }}>
@@ -22,44 +24,45 @@ export default function App() {
 
       <TextInput style={{
         flex: 1,
-        alignItems: "center",
+        textAlign: "center",
+        borderWidth: 1,
         
       }}
-      defaultValue="Game Name"
+      placeholder="Game Name"
       />
 
       <TextInput style={{
         flex: 1,
-        alignItems: "center",
+        textAlign: "center",
+        borderWidth: 1,
         
       }}
-      defaultValue="Start typing a location"
+      placeholder="Start typing a location"
       />
 
       <View style={{
-          flex: 1,
-          alignItems: "center",
-          
+
         }}>
         <Text>Number of Players</Text>
       </View>
 
       <View style={{
-          flex: 1,
-          alignItems: "center",
-          
+
         }}>
         <Text>Skill Level</Text>
       </View>
-    </ScrollView>
+      <Button
+        title="Create Game"
+        //onPress={() => Alert.alert('Simple Button pressed')}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'grey',
+    flex: 1,
+    
   },
 });
