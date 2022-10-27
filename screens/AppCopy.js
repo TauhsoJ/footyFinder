@@ -14,7 +14,6 @@ import {
 import { Provider } from "react-redux";
 import CreateGameScreen from './screens/CreateGameScreen';
 import HomeScreen from './screens/HomeScreen';
-import ProfileScreen from './screens/ProfileScreen';
 import MyGamesScreen from './screens/MyGamesScreen';
 import { store } from './store';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -30,10 +29,8 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-
 import { MaterialHeaderButtons } from './components/HeaderButtons';
 import { Item } from 'react-navigation-header-buttons';
-//import auth from '@react-native-firebase/auth';
 
 const AuthContext = React.createContext();
 const Drawer = createDrawerNavigator();
@@ -83,10 +80,6 @@ function LoginScreen() {
       <TouchableOpacity onPress={() => signIn({ email, password })}
         style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>         
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => signIn({ email, password })}
-          style={styles.registerBtn}>
-          <Text style={styles.loginText}>REGISTER</Text>
       </TouchableOpacity>
     </View>
   );
@@ -184,7 +177,7 @@ export default function App({ navigation }) {
                   name="footyFinder"
                   component={LoginScreen}
                   options={{
-                    title: 'Sign in', headerShown: false,
+                    title: 'Sign in',
                     // When logging out, a pop animation feels intuitive
                     animationTypeForReplace: state.isSignout ? 'pop' : 'push',
                   }}
@@ -194,10 +187,6 @@ export default function App({ navigation }) {
                   <Stack.Screen 
                     name="Home"
                     component={HomeScreen} 
-                  />
-                  <Stack.Screen 
-                    name="Profile"
-                    component={ProfileScreen} 
                   />
                   <Stack.Screen 
                     name="My Games"
@@ -257,15 +246,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: "#3d85c6",
-  },
-  registerBtn: {
-    width: "80%",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
     backgroundColor: "#3d85c6",
   },
 });
