@@ -66,7 +66,7 @@ export default ProfileScreen
 const styles = StyleSheet.create({
     container: {
       display: "flex",
-      flexDirection: "vertical",
+      flexDirection: "column",
       height: "100%",
       alignItems: 'center',
 

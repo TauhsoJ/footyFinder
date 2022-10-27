@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     container: {
       width: Dimensions.get('window').width,
       display: "flex",
-      flexDirection: "vertical",
+      flexDirection: "column",
       height: "100%",
       alignItems: 'center',
 
